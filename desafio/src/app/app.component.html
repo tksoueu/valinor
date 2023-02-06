@@ -15,7 +15,7 @@
         <div class="nav"> <!-- /nav -->
           <div class="input-group p-3"> <!-- /input group -->
             <!-- aqui é criado o input text para digitar a pesquisa e o botão para chamar a função -->
-            <input id="keyword" name="keyword" placeholder="Qual repositório deseja buscar?" #keyword class="form-control">
+            <input id="keyword" name="keyword" placeholder="Qual repositório deseja buscar?" #keyword class="form-control" autocomplete="off">
             <button (click)="getRepos(keyword.value)" class="btn btn-secondary btn-lg">Buscar</button>
           </div> <!-- /input group -->
         </div> <!-- /nav -->
@@ -26,9 +26,6 @@
       <!-- nessa section, é utilizado um ngfor para imprimir o número de cards recebidos em resposta para a função
       getRepos() chamada no clique do botão. Ela retorna um array contendo tipos IRepo (modelo criado para os repositórios)
       e aqui é colocado para imprimir um card para cada item nesse array -->
-      <!--
-        Não consegui implementar a paginação corretamente, então ele imprime apenas os 30 primeiros resultados :/ )
-      -->
         <ul *ngFor="let item of repos" class="list-group"> <!-- /ul -->
           <li class="list-group-item p-2 mb-2"> <!-- /li -->
             <div class="row p-2 mt-2">  <!-- /row -->
